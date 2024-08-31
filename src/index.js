@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
-    return (
-        <h1>Hello</h1>
-    );
-};
+  return (
+    <h1>Hello</h1>
+  );
+}
 
-const root = ReactDOM.creactRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<App />)
-
+root.render(<React.StrictMode><App /></React.StrictMode>);   
