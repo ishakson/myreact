@@ -54,13 +54,37 @@ function Pizza() {
   </div>
   )
 }
+
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <div className="menu">
+      <h2>Our menu</h2>
+      <ul>
+        <Pizza/>
+      </ul>
+    </div>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour < closeHour;
+  console.log(isOpen)
+  return <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
+}
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Header />
+      <Menu />
+      <Footer />
+
     </div>
   );
 }
