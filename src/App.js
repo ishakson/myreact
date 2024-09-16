@@ -6,19 +6,33 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div className="App">
+      <Steps />
+      <Steps />
+
+    </div>
+  )
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
   const handleNext = () => {
     if (step === 3) return;
-    setStep(step + 1);
+    setStep(s => s + 1);
+
+
   };
   const handlePrevious = () => {
     if (step === 1) return;
-    setStep(step - 1);
+    setStep(s => s - 1);
+    
+
   };
   return (
-    <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+    <div>
+      <button className="close" onClick={() => setIsOpen(is => !is)}>
         {isOpen ? "\u2716" : "\u2630"}
       </button>
       {isOpen && (
@@ -50,6 +64,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
